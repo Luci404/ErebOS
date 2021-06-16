@@ -29,3 +29,4 @@ Using Qemu: `qemu-system-x86_64 -cdrom dist/x86_64/kernel.iso`
 
 # Resources
  - https://www.youtube.com/watch?v=FkrpUaGThTQ
+ - https://www.youtube.com/watch?v=wz9CZBeXR6U
