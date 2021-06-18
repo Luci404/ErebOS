@@ -11,10 +11,9 @@ struct Char {
 struct Char* buffer = (struct Char*) 0xb8000;
 size_t col = 0;
 size_t row = 0;
-uint8_t  color = PRINT_COLOR_WHITE | PRINT_COLOR_BLACK << 4;
+uint8_t color = PRINT_COLOR_WHITE | PRINT_COLOR_BLACK << 4;
 
-void clear_row(size_t row)
-{
+void clear_row(size_t row) {
     struct Char empty = (struct Char) {
         character: ' ',
         color: color,
@@ -25,19 +24,16 @@ void clear_row(size_t row)
     }
 }
 
-void print_clear()
-{
+void print_clear() {
     for (size_t i = 0; i < NUM_ROWS; i++) {
         clear_row(i);
     }
 }
 
-void print_newline()
-{
+void print_newline() {
     col = 0;
 
-    if (row < NUM_ROWS - 1)
-    {
+    if (row < NUM_ROWS - 1) {
         row++;
         return;
     }
@@ -52,29 +48,25 @@ void print_newline()
     clear_row(NUM_COLS - 1);
 }
 
-void print_char(char character)
-{
-    if (character == '\n')
-    {
+void print_char(char character) {
+    if (character == '\n') {
         print_newline();
         return;
     }
 
-    if (col > NUM_COLS)
-    {
+    if (col > NUM_COLS) {
         print_newline();
     }
 
     buffer[col + NUM_COLS * row] = (struct Char) {
-        character: (uint32_t) character,
+        character: (uint8_t) character,
         color: color,
     };
 
     col++;
 }
 
-void print_str(char* str)
-{
+void print_str(char* str) {
     for (size_t i = 0; 1; i++) {
         char character = (uint8_t) str[i];
 

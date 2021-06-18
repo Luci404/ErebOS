@@ -1,9 +1,6 @@
 {
     "files.associations": {
-        "stddef.h": "c",
-        "corecrt.h": "c",
-        "vcruntime.h": "c",
-        "vadefs.h": "c",
-        "stdint.h": "c"
+        "cstdio": "cpp",
+        "stdbool.h": "c"
     }
 }

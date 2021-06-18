@@ -2,9 +2,6 @@
  - Docker : https://www.docker.com/products/docker-desktop
  - QUMU : https://qemu.weilnetz.de/w64/
 
-# Docs:
-
-
 # Files
 `src/impl/x86_64/boot/header.asm` - implements Multiboot2
 `src/impl/x86_64/boot/main.asm` - os entry point
